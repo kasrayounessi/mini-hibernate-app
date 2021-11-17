@@ -1,11 +1,12 @@
 package com.revature;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public class Employee {
-    @Id
+    @Id @GeneratedValue
     private int id;
     private String name;
     private String email;
@@ -52,6 +53,8 @@ public class Employee {
         this.country = country;
     }
 
+    /*
+
     @Override
     public String toString() {
         return "Employee{" +
@@ -61,4 +64,6 @@ public class Employee {
                 ", country='" + country + '\'' +
                 '}';
     }
+
+     */
 }

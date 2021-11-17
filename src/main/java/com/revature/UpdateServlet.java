@@ -11,9 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class RegisterServlet extends HttpServlet {
+public class UpdateServlet extends HttpServlet {
 
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Configuration cfg = new Configuration();
         cfg.configure("hibernate.cfg.xml");
         SessionFactory factory = cfg.buildSessionFactory();
@@ -21,19 +21,21 @@ public class RegisterServlet extends HttpServlet {
         Transaction t = session.beginTransaction();
 
         Employee employee = new Employee();
-        //employee.setId(1);
-        employee.setName(request.getParameter("name"));
-        employee.setEmail(request.getParameter("email"));
-        employee.setCountry(request.getParameter("country"));
 
-        session.save(employee);
+        employee.setId(1);
+        employee.setName("Kasra");
+        employee.setEmail("k@gmail.com");
+        employee.setCountry("USA");
+
+        session.update(employee);
         t.commit();
         session.close();
 
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        out.println("You have attempted to sign in an employee");
+        out.println("You have attempted to update an employee");
         out.println("<a href='index.html'>Click to go back</a>");
+
 
     }
 }

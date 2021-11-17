@@ -5,12 +5,22 @@
 <web-app>
     <servlet>
         <servlet-name>RegisterServlet</servlet-name>
-        <servlet-class>RegisterServlet</servlet-class>
+        <servlet-class>com.revature.RegisterServlet</servlet-class>
     </servlet>
 
     <servlet>
         <servlet-name>ViewServlet</servlet-name>
-        <servlet-class>ViewServlet</servlet-class>
+        <servlet-class>com.revature.ViewServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>UpdateServlet</servlet-name>
+        <servlet-class>com.revature.UpdateServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>DeleteServlet</servlet-name>
+        <servlet-class>com.revature.DeleteServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -21,5 +31,15 @@
     <servlet-mapping>
         <servlet-name>ViewServlet</servlet-name>
         <url-pattern>/ViewServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>UpdateServlet</servlet-name>
+        <url-pattern>/UpdateServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>DeleteServlet</servlet-name>
+        <url-pattern>/DeleteServlet</url-pattern>
     </servlet-mapping>
 </web-app>
